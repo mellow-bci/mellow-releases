@@ -2,6 +2,94 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <item>
+      <title>1.0.6-beta.14</title>
+      <pubDate>Tue, 20 Oct 2026 12:23:02 +0000</pubDate>
+      <sparkle:channel>beta</sparkle:channel>
+      <sparkle:version>1.0.60014</sparkle:version>
+      <sparkle:shortVersionString>1.0.6-beta.14</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description sparkle:format="markdown"># Mellow 1.0.6-beta.14
+
+- Fix paired-phone calls and local chat continuation after saving an ordinary local conversation.
+- Handle speech-worker announcement races during call startup while retaining worker-role, session, and recovery checks.
+- Keep video renderers and delegated media participants outside the speech worker's privileged RPC path.
+
+Calls require a compatible backend and call worker. Video rendering can take several minutes to start from idle. This beta does not guarantee cold-start latency or seamless network switching. The iPhone companion is distributed separately through TestFlight; this release does not deploy hosted services.
+
+</description>
+      <enclosure url="https://github.com/autonomy-cloud/mellow-releases/releases/download/1.0.6-beta.14/Mellow-1.0.6-beta.14.dmg" length="460704638" type="application/octet-stream" sparkle:edSignature="9EmfS/JfHizYP7FdQfDL1f2f4zhuB+Wg71OuSDHzkHF3RShf4Ui04ztm25m/OKYC/Q7PqL8wB2y1yLNRi4x8Dw==" />
+    </item>
+    <item>
+      <title>1.0.6-beta.13</title>
+      <pubDate>Tue, 20 Oct 2026 00:08:41 +0000</pubDate>
+      <sparkle:channel>beta</sparkle:channel>
+      <sparkle:version>1.0.60013</sparkle:version>
+      <sparkle:shortVersionString>1.0.6-beta.13</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description sparkle:format="markdown"># Mellow 1.0.6-beta.13
+
+- Add automated iOS signing, validation, and TestFlight uploads alongside tagged Mac releases. Apple processing and beta review remain separate steps.
+- Add paired-Mac support for native iPhone voice and video calls, including protected video admission and the agent’s configured portrait.
+- Allow cold video-renderer preparation to finish without applying the shorter missing-worker recovery deadline.
+- Improve portrait delivery through the relay. The iPhone companion caches bounded portrait thumbnails locally while video rendering uses the original image.
+- Refine the iPhone call interface with separate voice/video buttons, consistent controls, and camera-off preview behavior. Startup failures identify the failing connection stage.
+
+Physical iPhone testing confirmed visible agent video and spoken replies through the paired Mac. One cold renderer startup took about 3 minutes 40 seconds; a subsequent warm admission took about 6 seconds. These observations are not a latency guarantee or qualification of every model/provider.
+
+Calls require a compatible backend, call worker, and configured video-rendering service. This Mac update does not deploy those services. The iPhone companion is distributed separately through TestFlight. Calls remain foreground-only; camera transport does not automatically provide model visual context.
+
+</description>
+      <enclosure url="https://github.com/autonomy-cloud/mellow-releases/releases/download/1.0.6-beta.13/Mellow-1.0.6-beta.13.dmg" length="460703981" type="application/octet-stream" sparkle:edSignature="ruj3zt47KokdDWuAR7QGq3KSkZ/gMM41SOLzGR6++DZ/VzTHKCJv/fYyYYOc8tsUeP0bDQqdEkYJsEhMGTqaAw==" />
+    </item>
+    <item>
+      <title>1.0.6-beta.12</title>
+      <pubDate>Sun, 18 Oct 2026 22:28:20 +0000</pubDate>
+      <sparkle:channel>beta</sparkle:channel>
+      <sparkle:version>1.0.60012</sparkle:version>
+      <sparkle:shortVersionString>1.0.6-beta.12</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description sparkle:format="markdown"># Mellow 1.0.6-beta.12
+
+- Use an agent’s portrait in local-agent video calls while your Mac keeps ownership of the conversation, model, tools and speech. Voice-only calls do not request a video renderer.
+- Preserve original portrait images and custom portraits when changing themes, and keep Settings readable in the selected appearance.
+- Open the selected conversation when clicking an agent card, dismissing Settings so the chat is immediately visible.
+- Improve call startup, cancellation and cleanup. Retry eligible timed-out call requests with the same conversation item, and retire an unreachable worker when bounded recovery fails.
+
+Local-agent video was checked in the app with an audible answer, a follow-up calculation, visible lip sync and a spoken Stop interruption. Cold startup and a warm restart were observed separately; transport reconnect was not measured. These checks do not establish support for every model, voice provider or deployment.
+
+Animated local-agent video requires a compatible CAST deployment, call worker and configured portrait-rendering facility. Installing this desktop update does not deploy those services. The iOS companion limitations described in beta.10 remain unchanged.
+
+</description>
+      <enclosure url="https://github.com/autonomy-cloud/mellow-releases/releases/download/1.0.6-beta.12/Mellow-1.0.6-beta.12.dmg" length="460619146" type="application/octet-stream" sparkle:edSignature="5waw4fjIegQMZlcx1QmyrXeGtWszvhfW9rMTfVFC/URQDWPDeSDclHqEzk4XZdHdLizCoaW9jTnX3sXOq+lpBg==" />
+    </item>
+    <item>
+      <title>1.0.6-beta.11</title>
+      <pubDate>Sun, 18 Oct 2026 16:54:48 +0000</pubDate>
+      <sparkle:channel>beta</sparkle:channel>
+      <sparkle:version>1.0.60011</sparkle:version>
+      <sparkle:shortVersionString>1.0.6-beta.11</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description sparkle:format="markdown"># Mellow 1.0.6-beta.11
+
+- Bring workspace agents, tools, publishing, and Mac hosting into a consistent Mellow interface, with Settings in a centered dialog over your conversation.
+- Open a conversation directly from an agent card, and preserve the existing workspace connection when signing in again.
+- Improve local task continuity so follow-up requests use the latest conversation context, including after reconnecting or reopening Mellow.
+- Improve local-agent voice calls and cloud-avatar call handling, including pending starts, call controls, and ending a session. Prevent separate CAST deployments that share a media service from removing each other's call rooms.
+- Fix browser edits disappearing from React-controlled input and text fields after the page updates.
+- Fix file-history persistence and improve translations across the workspace interface.
+
+Local-agent voice was checked with an audible answer and a follow-up calculation; cloud-avatar video and an audible reply were checked separately. These checks do not establish support for every model, voice provider, or deployment. Local models can still add unsolicited text to otherwise correct answers.
+
+Workspace publishing and call improvements require a compatible CAST deployment and call worker. This beta does not add local-agent animated portrait video or change the iOS companion limitations described in beta.10.
+
+</description>
+      <enclosure url="https://github.com/autonomy-cloud/mellow-releases/releases/download/1.0.6-beta.11/Mellow-1.0.6-beta.11.dmg" length="460625270" type="application/octet-stream" sparkle:edSignature="TYI+PVOHU2ef2fICZjXNNRJ3eQH/SjcU5U56aAzMqHBvfkG1FbtlfrJASm05tV3b+l7VWlfjfJjDdR2WgBWtBg==" />
+    </item>
+    <item>
       <title>1.0.6-beta.10</title>
       <pubDate>Sun, 18 Oct 2026 08:57:39 +0000</pubDate>
       <sparkle:channel>beta</sparkle:channel>
